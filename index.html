@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Coaching Demo</title>
+<style>
+/* General Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+body { background:#f0f4f8; color:#333; scroll-behavior: smooth; }
+
+/* Header / Hero */
+header {
+  background: linear-gradient(135deg, #4CAF50, #81C784);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+  animation: fadeIn 1.5s ease-in;
+}
+header h1 { font-size:3em; margin-bottom:10px; }
+header p { font-size:1.2em; margin-bottom:20px; }
+header a button {
+  background:#FF9800; border:none; padding:15px 30px; font-size:1.1em;
+  color:white; border-radius:50px; cursor:pointer; transition:0.3s;
+}
+header a button:hover { background:#F57C00; transform:scale(1.05); }
+
+/* Sections */
+section { padding:60px 20px; text-align:center; opacity:0; transform: translateY(50px); transition: 0.8s ease-out; }
+section.active { opacity:1; transform: translateY(0); }
+section h2 { font-size:2em; margin-bottom:30px; color:#2E7D32; }
+
+/* Cards */
+.card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.card { background:white; padding:25px; width:250px; border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15); transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 15px rgba(0,0,0,0.25); }
+
+/* Testimonials */
+.testimonial { background:#E8F5E9; padding:20px; border-radius:10px; margin:10px; font-style:italic; }
+
+/* Buttons */
+button { cursor:pointer; transition:0.3s; }
+button:hover { opacity:0.9; }
+
+/* Footer / Contact */
+footer { background:#2E7D32; color:white; padding:40px 20px; text-align:center; }
+footer a button { background:#FFB74D; }
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+
+/* Responsive */
+@media(max-width:768px){
+  .card-container { flex-direction:column; align-items:center; }
+  header h1 { font-size:2.2em; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header>
+  <h1>ABC Coaching</h1>
+  <p>Helping Students Ace Exams Faster with Expert Guidance</p>
+  <a href="https://wa.me/919301868258"><button>Enquire Now on WhatsApp</button></a>
+</header>
+
+<!-- Why Us -->
+<section id="why">
+  <h2>Why Choose Us?</h2>
+  <div class="card-container">
+    <div class="card">✅ Experienced Faculty</div>
+    <div class="card">✅ Proven Exam Results</div>
+    <div class="card">✅ Flexible Timings</div>
+  </div>
+</section>
+
+<!-- Courses -->
+<section id="courses">
+  <h2>Courses Offered</h2>
+  <div class="card-container">
+    <div class="card"><h3>Maths Crash Course</h3><p>Duration: 2 Months</p><p>Fee: ₹2000</p></div>
+    <div class="card"><h3>Science Intensive</h3><p>Duration: 3 Months</p><p>Fee: ₹5000</p></div>
+    <div class="card"><h3>English Communication</h3><p>Duration: 1 Month</p><p>Fee: ₹1000</p></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <h2>Student Testimonials</h2>
+  <div class="card-container">
+    <div class="testimonial card">"Got 95% in board exams! ABC Coaching changed my life." - Rahul</div>
+    <div class="testimonial card">"Highly recommend ABC Coaching. Fantastic teachers." - Priya</div>
+    <div class="testimonial card">"Friendly environment and excellent guidance!" - Ankit</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<footer>
+  <h2>Contact Us</h2>
+  <p>Phone: +91- 9301868258<br>Address: Your City</p>
+  <a href="https://wa.me/919301868258"><button>Talk to Us on WhatsApp</button></a>
+</footer>
+
+<script>
+// Animate sections on scroll
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY + window.innerHeight - 100;
+  sections.forEach(sec => {
+    if(scrollPos > sec.offsetTop){
+      sec.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+    </html>
