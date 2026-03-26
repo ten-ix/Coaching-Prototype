@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ABC Coaching Demo</title>
 <style>
-/* General Reset */
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
 body { background:#f0f4f8; color:#333; scroll-behavior: smooth; }
 
-/* Header / Hero */
 header {
   background: linear-gradient(135deg, #4CAF50, #81C784);
   color:white;
@@ -19,13 +17,19 @@ header {
 }
 header h1 { font-size:3em; margin-bottom:10px; }
 header p { font-size:1.2em; margin-bottom:20px; }
+
 header a button {
-  background:#FF9800; border:none; padding:15px 30px; font-size:1.1em;
-  color:white; border-radius:50px; cursor:pointer; transition:0.3s;
+  background:#FF9800;
+  border:none;
+  padding:15px 30px;
+  font-size:1.1em;
+  color:white;
+  border-radius:50px;
+  cursor:pointer;
+  transition:0.3s;
 }
 header a button:hover { background:#F57C00; transform:scale(1.05); }
 
-/* Sections */
 section {
   padding:60px 20px;
   text-align:center;
@@ -39,27 +43,52 @@ section.active {
   transform: translateY(0);
 }
 
-/* Cards */
-.card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.card { background:white; padding:25px; width:250px; border-radius:15px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15); transition:0.3s; }
-.card:hover { transform:translateY(-5px); box-shadow:0 8px 15px rgba(0,0,0,0.25); }
+section h2 { font-size:2em; margin-bottom:30px; color:#2E7D32; }
 
-/* Testimonials */
-.testimonial { background:#E8F5E9; padding:20px; border-radius:10px; margin:10px; font-style:italic; }
+.card-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
 
-/* Buttons */
+.card {
+  background:white;
+  padding:25px;
+  width:250px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 8px 15px rgba(0,0,0,0.25);
+}
+
+.testimonial {
+  background:#E8F5E9;
+  padding:20px;
+  border-radius:10px;
+  margin:10px;
+  font-style:italic;
+}
+
 button { cursor:pointer; transition:0.3s; }
 button:hover { opacity:0.9; }
 
-/* Footer / Contact */
-footer { background:#2E7D32; color:white; padding:40px 20px; text-align:center; }
+footer {
+  background:#2E7D32;
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
 footer a button { background:#FFB74D; }
 
-/* Animations */
-@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
 
-/* Responsive */
 @media(max-width:768px){
   .card-container { flex-direction:column; align-items:center; }
   header h1 { font-size:2.2em; }
@@ -68,14 +97,12 @@ footer a button { background:#FFB74D; }
 </head>
 <body>
 
-<!-- Hero -->
 <header>
   <h1>ABC Coaching</h1>
   <p>Helping Students Ace Exams Faster with Expert Guidance</p>
   <a href="https://wa.me/919301868258"><button>Enquire Now on WhatsApp</button></a>
 </header>
 
-<!-- Why Us -->
 <section id="why">
   <h2>Why Choose Us?</h2>
   <div class="card-container">
@@ -85,7 +112,6 @@ footer a button { background:#FFB74D; }
   </div>
 </section>
 
-<!-- Courses -->
 <section id="courses">
   <h2>Courses Offered</h2>
   <div class="card-container">
@@ -95,7 +121,6 @@ footer a button { background:#FFB74D; }
   </div>
 </section>
 
-<!-- Testimonials -->
 <section id="testimonials">
   <h2>Student Testimonials</h2>
   <div class="card-container">
@@ -105,7 +130,6 @@ footer a button { background:#FFB74D; }
   </div>
 </section>
 
-<!-- Contact -->
 <footer>
   <h2>Contact Us</h2>
   <p>Phone: +91- 9301868258<br>Address: Your City</p>
@@ -114,17 +138,21 @@ footer a button { background:#FFB74D; }
 </footer>
 
 <script>
-// Animate sections on scroll
 const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
+
+function revealSections() {
   const scrollPos = window.scrollY + window.innerHeight - 100;
+
   sections.forEach(sec => {
-    if(scrollPos > sec.offsetTop){
+    if (scrollPos > sec.offsetTop) {
       sec.classList.add('active');
     }
   });
-});
+}
+
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
 </script>
 
 </body>
-    </html>
+</html>
